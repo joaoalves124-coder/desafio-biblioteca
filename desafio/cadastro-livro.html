@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro-livro</title>
+</head>
+<body>
+    <main>
+        <section>
+            <header>
+                ===========================================================
+                <h1>CADASTRO DE REFERÊNCIA BIBLIOGRÁFICA</h1>
+                <p>Cadastre os livros recomendados para as disciplinas.</p>
+                ===========================================================
+            </header>
+        </section>
+
+        <section>
+            <form action="/salvar-livro" method="POST">
+                <fieldset>
+                    <legend>Informações da Obra</legend>
+                    <p>
+                        <label for="titulo_do_Livro">Titulo do Livro:</label>
+                        <input type="text" id="titulo_do_livro" name="titulo_do_livro" required>
+                    </p>
+
+                    <p>
+                        <label for="autores">autor(es):</label>
+                        <input type="text" id="autores" name="autores" required>
+                    </p>
+
+                    <p>
+                        <label for="isbn">ISBN 13 (Digitos):</label>  
+                        <input type="text" id="isbn" name="isbn" pattern="\d{3}-\d{2}-\d{5}-\d{2}-\d{1}" placeholder="xxx-xx-xxxxx-xx-x" title="O Formato do IBSN deve Ser: xxx-xx-xxxxx-xx-x" required>
+                    </p>
+                    
+                    <p>
+                        <label for="ano">Ano de Publicação:</label>
+                        <input type="number" id="ano" name="ano" pattern="\d{4}" placeholder="2026-1xxx" title="O formato dos anos deve ser de 2026 à 1xxx" max="2026" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes Acadêmicos</legend>
+                      
+                    <p>
+                        <label for="cursos">Curso Alvo:</label>
+                        <select id="cursos" name="cursos" required>
+                            <option value="engenharia_de_software">Engenharia de Software</option>
+                            <option value="analide_desenvolvimento_de_sistemas">"Análise e Desenv. de Sistemas"</option>
+                            <option value="tronco_comum">Tronco Comum</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="disciplina">Disciplinas:</label>
+                        <input type="text" id="disciplinas" name="disciplina" required>
+                    </p>
+
+                    <label>Formato:</label>
+
+                    <label for="formato_fisico">Físico</label>
+                    <input type="radio" id="formato_fisico" name="formato" value="Físico" required>
+
+                    <label for="formato_digital">Digital</label>
+                    <input type="radio" id="formato_digital" name="formato" value="Digital">
+
+                    <label for="formato_ambos">Ambos</label>
+                    <input type="radio" id="formato_ambos" name="formato" value="Ambos">
+
+
+
+
+                       
+                      
+                </fieldset>
+                    
+                <button type="submit">Salvar Livro</button>
+            </form>
+        </section>
+    </main>
+
+
+    
+</body>
+</html>
